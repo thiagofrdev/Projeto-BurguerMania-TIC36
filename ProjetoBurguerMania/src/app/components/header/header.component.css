@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte-principal);
+    color: var(--color-brown);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+header, nav{
+    display: flex;
+    align-items: center;
+}
+
+nav{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo{
+    margin-right: 15em;
+}
