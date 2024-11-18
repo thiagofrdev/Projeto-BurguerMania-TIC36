@@ -2,3 +2,20 @@
     margin: 0;
     padding: 0;
 }
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    width: 50em;
+    margin: 2.5em auto;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: 0 auto;
+  }

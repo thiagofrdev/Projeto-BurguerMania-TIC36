@@ -1,5 +1,5 @@
 * {
-    padding: 0.5em 3em;
+    padding: 0em 5em;
     margin: 0;
 }
 
@@ -9,3 +9,5 @@
     --color-brown: #521D16;
     --fonte-principal: sans-serif, 'Arial';
 }
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
