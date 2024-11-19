@@ -1,1 +1,9 @@
-<h1>Cardápio</h1>
+<div class="cardapio">
+  <h1>Cardápio</h1>
+  <div class="cards">
+    <div *ngFor="let categoria of categorias">
+      <a [routerLink]="['/categoria', categoria]"><app-card nome_categoria="{{categoria}}"></app-card></a>
+    </div>
+  </div>
+  <app-botao corFonte="var(--color-white)" cor="var(--color-red)" valor="VER CARDÁPIO COMPLETO"></app-botao>
+</div>

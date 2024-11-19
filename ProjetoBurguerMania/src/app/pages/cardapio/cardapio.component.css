@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--fonte-principal);
+    font-size: 3em;
+    color: var(--color-red);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.cardapio{
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+}
+
+.border{
+    border: 2px solid red;
+}

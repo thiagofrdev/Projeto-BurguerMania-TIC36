@@ -4,7 +4,15 @@
   </div>
   <nav>
       <a routerLink="/" class="menu-item">Início</a>
-      <a routerLink="/categoria" class="menu-item">Categoria</a>
+      <!-- <a routerLink="/categoria" class="menu-item">Categoria</a> -->
+      <div class="dropdown">
+        <button class="dropdown-btn">Categoria</button>
+        <div class="dropdown-content">
+          <div *ngFor="let categoria of categorias">
+            <a [routerLink]="['/categoria', categoria]">{{ categoria }}</a>
+          </div>
+        </div>
+      </div>
       <a routerLink="/cardapio" class="menu-item">Cardápio</a>
       <a routerLink="/localizacao" class="menu-item">Localização</a>
       <a routerLink="/contato" class="menu-item">Contato</a>

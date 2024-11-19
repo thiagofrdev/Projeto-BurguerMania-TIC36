@@ -12,10 +12,10 @@ import {MatButtonModule} from '@angular/material/button';
 
 //Classe com propriedades que podem ser modificadas dinamicamente
 export class BotaoComponent {
-  @Input() texto: string = 'Botão'; // Texto padrão
+  @Input() texto: string = 'Botão';
   @Input() tamanhoFonte: string = '1';
-  @Input() valor: string = 'Teste';
+  @Input() valor: string = 'Teste'; // Texto padrão
   @Input() cor: string = 'blue'; // Cor padrão
   @Input() corFonte: string = 'black';
-  @Input() largura: string = '18';
+  @Input() largura: string = '';
 }

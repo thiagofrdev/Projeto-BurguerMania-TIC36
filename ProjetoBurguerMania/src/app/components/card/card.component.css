@@ -1,0 +1,39 @@
+* {
+    margin: 0em;
+    padding: 0em;
+}
+
+img{
+    width: 12em;
+    border-radius: 100%;
+}
+
+.card{
+    margin: 1em;
+    padding: 0em 1em;
+    width: 20em;
+    height: 20em;
+    border-radius: 1em;
+}
+
+.card:hover{
+    border: 2px solid var(--color-red);
+    box-shadow: 0em 0em 0.5em 0.1em var(--color-red);
+}
+
+.card_img_nome, .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card_nome{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-brown);
+}
+
+/* .border{
+    border: 2px solid red;
+} */

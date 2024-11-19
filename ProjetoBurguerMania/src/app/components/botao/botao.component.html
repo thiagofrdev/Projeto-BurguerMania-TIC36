@@ -1,17 +1,10 @@
-<!-- Butão com propriedades para mudar dinamicamente a classe "btn-primary" -->
-<!-- <button 
-    [style.backgroundColor]="cor" 
-    [style.color]="cor_texto"
-    [style.font-size]="tamanho_fonte">
-
-    {{ texto }}
-</button> -->
-
+<!-- Botão com propriedades para mudar dinamicamente a classe "btn-primary" -->
 <button
     class="botao"
     [style.background-color]="cor"
     [style.color]="corFonte"
     [style.font-size]="tamanhoFonte + 'em'"
+    [style.weight]="largura + 'em'"
 >
 {{valor}}
 </button>
