@@ -3,21 +3,52 @@
     padding: 0;
     font-family: var(--fonte-principal);
     color: var(--color-brown);
-    font-size: 23px;
+    font-size: 1.15em;
     font-weight: bold;
+    box-sizing: border-box;
 }
 
-header, nav{
-    /* border: 2px solid red; */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
     display: flex;
     align-items: center;
 }
 
-nav{
-    width: 100%;
-    justify-content: space-between;
+.logo img {
+    height: 2.5em; /* Ajuste para o tamanho da logo */
 }
 
-.logo{
-    margin-right: 15em;
+nav {
+    display: flex;
+    gap: 1em; /* Espaçamento entre os links */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-brown); /* Cor padrão */
+    transition: color 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+nav a:hover {
+    color: var(--color-red); /* Cor ao passar o mouse */
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap; /* Permite que os itens fiquem em mais de uma linha */
+    }
+
+    .logo {
+        margin-bottom: 1em; /* Espaçamento entre a logo e o menu */
+    }
+
+    nav {
+        justify-content: center; /* Centraliza os links em telas menores */
+        gap: 1em;
+    }
 }

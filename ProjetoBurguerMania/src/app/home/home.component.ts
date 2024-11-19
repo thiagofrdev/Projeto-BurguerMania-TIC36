@@ -7,7 +7,7 @@ import { BotaoComponent } from "../components/botao/botao.component";
   standalone: true,
   imports: [HeaderComponent, BotaoComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
 

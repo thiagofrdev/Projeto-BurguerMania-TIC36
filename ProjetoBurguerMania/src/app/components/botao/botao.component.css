@@ -9,4 +9,5 @@ app-botao{
     height: 3em;
     width: 14em;
     border: 1px solid var(--color-red);
+    font-weight: bold;
 }
