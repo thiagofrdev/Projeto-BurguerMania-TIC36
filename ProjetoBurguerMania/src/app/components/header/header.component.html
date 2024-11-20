@@ -2,8 +2,8 @@
   <div class="logo">
       <img src="assets/imgs/logo.png" alt="Logo Burger Mania" height="60">
   </div>
-  <nav>
-      <a routerLink="/" class="menu-item">Início</a>
+  <nav class="nav_links">
+      <a routerLink="/">Início</a>
       <!-- <a routerLink="/categoria" class="menu-item">Categoria</a> -->
       <div class="dropdown">
         <button class="dropdown-btn">Categoria</button>
@@ -13,8 +13,16 @@
           </div>
         </div>
       </div>
-      <a routerLink="/cardapio" class="menu-item">Cardápio</a>
-      <a routerLink="/localizacao" class="menu-item">Localização</a>
-      <a routerLink="/contato" class="menu-item">Contato</a>
+      <a routerLink="/cardapio">Cardápio</a>
+      <a routerLink="/localizacao">Localização</a>
+      <a routerLink="/contato">Contato</a>
+  </nav>
+  <nav class="nav_links_box">
+    <select class="select_box" id="cars" name="cars">
+      <option><a routerLink="/">Início</a></option>
+      <option><a routerLink="/cardapio">Cardápio</a></option>
+      <option><a routerLink="/localizacao">Localização</a></option>
+      <option><a routerLink="/contato">Contato</a></option>
+    </select>
   </nav>
 </header>

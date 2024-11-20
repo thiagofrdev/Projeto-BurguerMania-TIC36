@@ -23,7 +23,11 @@ header {
     height: 2.5em; /* Ajuste para o tamanho da logo */
 }
 
-nav {
+.select_box{
+    display: none;
+}
+
+.nav_links {
     display: flex;
     gap: 1em; /* Espaçamento entre os links */
 }
@@ -36,21 +40,6 @@ nav a {
 
 nav a:hover {
     color: var(--color-red); /* Cor ao passar o mouse */
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-wrap: wrap; /* Permite que os itens fiquem em mais de uma linha */
-    }
-
-    .logo {
-        margin-bottom: 1em; /* Espaçamento entre a logo e o menu */
-    }
-
-    nav {
-        justify-content: center; /* Centraliza os links em telas menores */
-        gap: 1em;
-    }
 }
 
 .dropdown {
@@ -88,4 +77,30 @@ nav a:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+@media screen and (max-width: 1200px) {
+    header {
+        width: 100%;
+    }
+
+    .nav_links {
+        display: none;
+    }
+
+    .nav_links_box {
+        display: flex;
+    }
+
+    .select_box{
+        display: initial;
+        padding: 0.2em;
+        appearance: none; /* Remove o estilo padrão */
+        background-color: var(--color-white);
+        border: 2px solid #888;
+        border-radius: 0.5em;
+        font-size: 1em;
+        cursor: pointer;
+        width: 7em;
+    }
 }

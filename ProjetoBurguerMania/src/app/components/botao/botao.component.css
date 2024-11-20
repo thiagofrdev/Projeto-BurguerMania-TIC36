@@ -1,11 +1,29 @@
 * {
-    padding: 0em 1em;
+    padding: 0;
     margin: 0;
 }
 
 .botao{
     height: 3em;
-    min-width: 15em;
+    width: 15em;
     border: 1px solid var(--color-red);
     font-weight: bold;
+}
+
+@media screen and (max-width: 1200px) {
+    .botao{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    app-botao{
+        margin: 0.5em 0em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    app-botao{
+        margin: 0.5em 0em;
+    }
 }
