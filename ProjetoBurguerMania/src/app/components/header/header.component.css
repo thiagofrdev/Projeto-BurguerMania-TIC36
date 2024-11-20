@@ -23,7 +23,7 @@ header {
     height: 2.5em; /* Ajuste para o tamanho da logo */
 }
 
-.select_box{
+.nav_links_box{
     display: none;
 }
 
@@ -82,6 +82,10 @@ nav a:hover {
 @media screen and (max-width: 1200px) {
     header {
         width: 100%;
+    }
+
+    .logo img {
+        height: 2em; /* Ajuste para o tamanho da logo */
     }
 
     .nav_links {

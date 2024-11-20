@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { CardComponent } from "../../components/card/card.component";
+import { BotaoComponent } from "../../components/botao/botao.component";
 
 @Component({
   selector: 'app-categoria',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent, BotaoComponent],
   templateUrl: './categoria.component.html',
   styleUrls: ['./categoria.component.css']
 })

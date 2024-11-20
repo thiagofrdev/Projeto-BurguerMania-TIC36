@@ -32,3 +32,15 @@ a {
 .border{
     border: 2px solid red;
 }
+
+@media screen and (max-width: 1200px) {
+    img{
+        width: 90%;
+    }
+
+    .cards{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

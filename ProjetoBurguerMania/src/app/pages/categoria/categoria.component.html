@@ -1,6 +1,9 @@
-<h1>{{ categoria }}</h1>
-<ul>
-  <p *ngFor="let hamburguer of hamburgueres">
-    <a routerLink="[hamburguer]">{{ hamburguer }}</a>
-  </p>
-</ul>
+<div class="categoria">
+  <h1>{{ categoria }}</h1>
+  <div class="categorias">
+    <div class="categorias_cards" *ngFor="let hamburguer of hamburgueres">
+        <a routerLink="[hamburguer]"><app-card nome_categoria="{{hamburguer}}"></app-card></a>
+    </div>
+  </div>
+  <app-botao corFonte="var(--color-white)" cor="var(--color-red)" valor="VER CARDÁPIO COMPLETO"></app-botao>
+</div>
