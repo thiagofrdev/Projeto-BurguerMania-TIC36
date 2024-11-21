@@ -1,6 +1,9 @@
 # Projeto Burguer Mania 🍔
 Este é um projeto de um **site responsivo para uma hamburgueria**, desenvolvido como parte da Unidade 9 da **Residência em Software TIC 36**. O objetivo do projeto é oferecer uma experiência intuitiva e agradável para os clientes, com informações sobre o cardápio, localização e formas de contato.
 
+## Imagem 
+![](https://github.com/thiagofrdev/Projeto-BurguerMania-TIC36/blob/main/ProjetoBurguerMania/src/assets/Home_BurguerMania.png)
+
 ## 🚀 Tecnologias Utilizadas
 - **HTML**: Estruturação do site
 - **CSS**: Estilização e responsividade
