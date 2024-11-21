@@ -13,17 +13,12 @@ img{
     margin: 0em auto;
 }
 
-/* app-botao{
-    width: 100%;
-} */
-
 .botoes {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 50%;
     margin: 1em auto 0em auto;
-    border: 2px solid red;
 }
 
 @media screen and (max-width: 1200px) {

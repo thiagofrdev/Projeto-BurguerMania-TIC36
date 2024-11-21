@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from "../../components/card/card.component";
 import { BotaoComponent } from "../../components/botao/botao.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-categoria',
   standalone: true,
-  imports: [CommonModule, CardComponent, BotaoComponent],
+  imports: [CommonModule, CardComponent, BotaoComponent, RouterModule],
   templateUrl: './categoria.component.html',
   styleUrls: ['./categoria.component.css']
 })

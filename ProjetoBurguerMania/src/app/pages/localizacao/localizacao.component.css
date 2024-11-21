@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--fonte-principal);
+    font-size: 3em;
+    color: var(--color-red);
+}
+
+.localizacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

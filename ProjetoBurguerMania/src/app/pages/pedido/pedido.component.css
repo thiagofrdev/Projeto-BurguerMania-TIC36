@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}   
+
+h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--fonte-principal);
+    font-size: 3em;
+    color: var(--color-red);
+}
+
+label{
+    font-family: var(--fonte-principal);
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+}
+
+input{
+    padding: 0em 0.5em;
+    box-sizing: border-box;
+    width: 25em;
+    height: 3em;
+    border: 1px solid gray;
+    border-radius: 0.3em;
+}
+
+.pedido{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form_div{
+    padding: 2em 2em;
+    width: 60%;
+    height: 25em;
+    border: 1px solid gray;
+}
+
+.pedido_card_info{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+
+.pedido_info{
+    display: flex;
+    flex-direction: column;
+}
+
+.obs_textarea{
+    display: flex;
+    flex-direction: column;
+    height: 45%;
+}
+
+.textarea{
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0.5em;    
+}
+
+@media (max-width: 1300px) {
+    .pedido_info_number{
+        width: 3em;
+        box-sizing: content-box;
+        margin: auto auto;
+    }
+
+    .pedido_info_number_label{
+        visibility: hidden;
+    }
+
+    .pedido_card_info{
+        justify-content: left;
+    }
+}
+
+@media (max-width: 850px){
+    .pedido_info_text{
+        width: 20em;
+    }
+}
+
+@media (max-width: 750px){
+    .pedido_info_text{
+        width: 10em;
+    }
+}
