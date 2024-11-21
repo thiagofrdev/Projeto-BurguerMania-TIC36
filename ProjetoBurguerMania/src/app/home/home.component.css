@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    /* border: 1px solid red; */
 }
 
 body{
@@ -17,7 +18,7 @@ img{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 50%;
+    width: 100%;
     margin: 1em auto 0em auto;
 }
 
@@ -27,14 +28,22 @@ img{
     }
 }
 
-@media screen and (max-width: 1000px) {
-    app-botao{
+@media screen and (max-width: 650px) {
+    .botoes{
+        display: flex;
+        height: 10em;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    /*app-botao{
         margin: 0.5em 0em;
     }
-
+ 
     .botoes{
         width: 70%;
-        display: block;
-        flex-direction: column;
-    }
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    } */
 }

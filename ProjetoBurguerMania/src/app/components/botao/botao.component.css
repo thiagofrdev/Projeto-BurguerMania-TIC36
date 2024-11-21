@@ -10,7 +10,7 @@
     font-weight: bold;
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
     .botao{
         width: 100%;
     }
@@ -26,4 +26,4 @@
     app-botao{
         margin: 0.5em 0em;
     }
-}
+} */

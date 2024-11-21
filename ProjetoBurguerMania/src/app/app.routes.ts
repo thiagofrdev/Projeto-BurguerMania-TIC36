@@ -6,6 +6,7 @@ import { CardapioComponent } from './pages/cardapio/cardapio.component';
 import { CategoriaComponent } from './pages/categoria/categoria.component';
 import { LocalizacaoComponent } from './pages/localizacao/localizacao.component';
 import { ContatoComponent } from './pages/contato/contato.component';
+import { ProdutoComponent } from './pages/produto/produto.component';
 
 // Definição das rotas da URL para cada página
 export const routes: Routes = [
@@ -13,6 +14,7 @@ export const routes: Routes = [
     { path: 'pedido', component: PedidoComponent },
     { path: 'cardapio', component: CardapioComponent },
     { path: 'categoria/:categoria', component: CategoriaComponent },
+    { path: 'categoria/:categoria/:hamburguer', component: ProdutoComponent },
     { path: 'localizacao', component: LocalizacaoComponent },
     { path: 'contato', component: ContatoComponent },
   ];
