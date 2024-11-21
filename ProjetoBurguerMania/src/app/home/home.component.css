@@ -35,15 +35,4 @@ img{
         flex-direction: column;
         justify-content: space-around;
     }
-    
-    /*app-botao{
-        margin: 0.5em 0em;
-    }
- 
-    .botoes{
-        width: 70%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    } */
 }
