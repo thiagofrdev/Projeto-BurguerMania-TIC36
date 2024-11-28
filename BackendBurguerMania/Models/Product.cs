@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BackendBurguerMania.Models
 {
-    public class Produto
+    public class Product
     {
         [Key] //Define como Chave Primária
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //Define como Auto-increment

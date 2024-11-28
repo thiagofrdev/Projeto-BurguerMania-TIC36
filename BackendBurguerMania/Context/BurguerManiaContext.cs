@@ -1,12 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using BackendBurguerMania.Models;
 
-namespace BackendBurguerMania.Data
+namespace BackendBurguerMania.Context
 {
-    public class ApplicationDbContext : DbContext
+    public class BurguerManiaContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
-
-        public DbSet<Produto> Produtos { get; set; }
+        public BurguerManiaContext(DbContextOptions options) : base(options) { }
+        public DbSet<Product> Products { get; set; }
     }
 }
