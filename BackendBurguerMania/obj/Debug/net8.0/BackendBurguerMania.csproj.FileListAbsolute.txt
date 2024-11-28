@@ -134,3 +134,4 @@ C:\Users\thiag\OneDrive\Documentos\PROGRAMAÇÃO\ProjetoBurguerMania_TIC36\Backe
 C:\Users\thiag\OneDrive\Documentos\PROGRAMAÇÃO\ProjetoBurguerMania_TIC36\BackendBurguerMania\obj\Debug\net8.0\BackendBurguerMania.pdb
 C:\Users\thiag\OneDrive\Documentos\PROGRAMAÇÃO\ProjetoBurguerMania_TIC36\BackendBurguerMania\obj\Debug\net8.0\BackendBurguerMania.genruntimeconfig.cache
 C:\Users\thiag\OneDrive\Documentos\PROGRAMAÇÃO\ProjetoBurguerMania_TIC36\BackendBurguerMania\obj\Debug\net8.0\ref\BackendBurguerMania.dll
+C:\Users\thiag\OneDrive\Documentos\PROGRAMAÇÃO\ProjetoBurguerMania_TIC36\BackendBurguerMania\bin\Debug\net8.0\BCrypt.Net-Next.dll

@@ -1,9 +1,17 @@
+using BackendBurguerMania.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+string conexao = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<BurguerManiaContext>(options => options.UseNpgsql(conexao));
+
+
 
 var app = builder.Build();
 

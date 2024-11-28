@@ -7,5 +7,7 @@ namespace BackendBurguerMania.Context
     {
         public BurguerManiaContext(DbContextOptions options) : base(options) { }
         public DbSet<Product> Products { get; set; }
+
+        public DbSet<Users> Users { get; set; }
     }
 }
