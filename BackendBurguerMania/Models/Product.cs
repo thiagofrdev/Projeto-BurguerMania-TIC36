@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace BackendBurguerMania.Models
 {
@@ -7,6 +8,7 @@ namespace BackendBurguerMania.Models
     {
         [Key] //Define como Chave Primária
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //Define como Auto-increment
+        [JsonIgnore]
         public int ID_Product { get; set; }
 
         [Required] //Define que é NOT NULL

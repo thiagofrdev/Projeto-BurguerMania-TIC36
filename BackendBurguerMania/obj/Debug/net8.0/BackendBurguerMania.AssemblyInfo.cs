@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackendBurguerMania")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35884a05471b1cce895c546c729d49e32ab9863a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f52dea6d19f8e0545afc3e66c69cc0121da7eac")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackendBurguerMania")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackendBurguerMania")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
