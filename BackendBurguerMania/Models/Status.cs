@@ -13,7 +13,7 @@ namespace BackendBurguerMania.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID_Status { get; set; }
 
-        [Key]
+        [Required]
         [StringLength(100)]
         public string Name_Status { get; set; }
     }

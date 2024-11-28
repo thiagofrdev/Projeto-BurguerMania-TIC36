@@ -9,5 +9,15 @@ namespace BackendBurguerMania.Context
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Users> Users { get; set; }
+
+        public DbSet<Status> Statuses { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<Category> Categories { get; set; }
+
+        public DbSet<OrdersProducts> OrdersProducts { get; set; }
+
+        public DbSet<UsersOrders> UsersOrders { get; set; }
     }
 }
