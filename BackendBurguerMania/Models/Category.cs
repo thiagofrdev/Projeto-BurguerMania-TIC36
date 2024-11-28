@@ -11,7 +11,7 @@ namespace BackendBurguerMania.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string ID_Category { get; set; }
+        public int ID_Category { get; set; }
 
         [Required]
         [StringLength(100)]

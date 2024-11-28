@@ -11,7 +11,7 @@ namespace BackendBurguerMania.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string ID_Order { get; set; }
+        public int ID_Order { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(10, 2)")]

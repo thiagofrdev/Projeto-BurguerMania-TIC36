@@ -11,7 +11,7 @@ namespace BackendBurguerMania.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string ID_Status { get; set; }
+        public int ID_Status { get; set; }
 
         [Key]
         [StringLength(100)]
