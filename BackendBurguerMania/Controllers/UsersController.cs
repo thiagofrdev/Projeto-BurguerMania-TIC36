@@ -26,12 +26,12 @@ namespace BackendBurguerMania.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Users>>> GetAllUsers()
         {
-            var users = await _context.Products.ToListAsync();
-            if (users is null)
+            var users = await _context.Users.ToListAsync();
+            if (!users.Any())
             {
                 return NotFound("Nenhum usuário encontrado");
             }
-            return Ok($"{users.Count} usuários encontados:" + users);
+            return Ok(new{ Message = $"{users.Count} usuários encontrados.", Users = users });
         }
 
         //Rota para adicioanr todos os Usuários
@@ -43,28 +43,17 @@ namespace BackendBurguerMania.Controllers
                 return BadRequest("Já existe um usuário com esse Email");
             }
 
+            user.Password_Hash = PasswordService.HashPassword(user.Password_Hash);
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return Ok("Usuário cadastrado om sucesso!" + user);
+            return Ok(new { Message = "Usuário cadastrado com sucesso!", User = user });
         }
 
         //Método para verificar se um usuário existe, comparando id e email
         private async Task<bool> UserExistsAsync(Users user)
         {
             return await _context.Users.AnyAsync(u => u.Email_User == user.Email_User);
-        }
-
-        //Função para criar o hash do password
-        public string HashPassword(string password)
-        {
-            return BCrypt.Net.BCrypt.HashPassword(password);
-        }
-
-        //Função para verificar o hash do password
-        public bool VerifyPassword(string password, string hashedPassword)
-        {
-            return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
         }
     }
 }
