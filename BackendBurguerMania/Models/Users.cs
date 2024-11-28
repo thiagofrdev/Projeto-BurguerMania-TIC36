@@ -23,7 +23,6 @@ namespace BackendBurguerMania.Models
         public string Email_User { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string Password_User { get; set; }
+        public string Password_Hash { get; set; }
     }
 }
