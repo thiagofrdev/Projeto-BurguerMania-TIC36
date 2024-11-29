@@ -2,7 +2,7 @@
   <h1>{{ categoria }}</h1>
   <div class="categorias">
     <div class="categorias_cards" *ngFor="let hamburguer of hamburgueres">
-        <a routerLink="{{hamburguer}}"><app-card nome_categoria="{{hamburguer}}"></app-card></a>
+        <a routerLink="{{hamburguer}}"><app-card  [nome]="hamburguer" [descricao]="'Descrição padrão'"></app-card></a>
     </div>
   </div>
   <a routerLink="/cardapio"><app-botao corFonte="var(--color-white)" cor="var(--color-red)" valor="VER CARDÁPIO COMPLETO"></app-botao></a>

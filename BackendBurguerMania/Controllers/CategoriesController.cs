@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BackendBurguerMania.Controllers
 {
     [Route("[controller]")]
+    [ApiController]
     public class CategoriesController : ControllerBase
     {
         private readonly BurguerManiaContext _context;
@@ -59,8 +60,8 @@ namespace BackendBurguerMania.Controllers
             if (_context.Categories.FirstOrDefaultAsync(c => c.Name_Category == name) is null)
                 return BadRequest($"Categoria {name} não encontrada");
 
-            _context.Categories.Add(category);
-            _context.SaveChangesAsync();
+            _context.Categories.Update(category);
+            await _context.SaveChangesAsync();
 
             return Ok(new {Message = $"Categoria {name} atualizada com sucesso", Category = category});
         }
@@ -68,14 +69,15 @@ namespace BackendBurguerMania.Controllers
         [HttpDelete("{name}")]
         public async Task<ActionResult<IEnumerable<Category>>> DeleteCategoryByName(string name)
         {
-            if (_context.Categories.FirstOrDefaultAsync(c => c.Name_Category == name) is null)
+            var category = await _context.Categories.FirstOrDefaultAsync(c => c.Name_Category == name); 
+
+            if (category is null)
                 return BadRequest($"Categoria {name} não encontrada");
 
-            var category = await _context.Categories.FirstOrDefaultAsync(c => c.Name_Category == name);
             _context.Categories.Remove(category);
             _context.SaveChangesAsync();
 
-            return Ok(new {Message = $"Categoria {name} removida com sucesso", Category = category});
+            return Ok($"Categoria {name} removida com sucesso");
         }
     }
 }

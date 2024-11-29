@@ -1,8 +1,14 @@
 <div class="cardapio">
   <h1>Cardápio</h1>
   <div class="cards">
+    <p *ngIf="categorias.length === 0">Nenhuma categoria disponível.</p>
     <div *ngFor="let categoria of categorias">
-      <a [routerLink]="['/categoria', categoria]"><app-card nome_categoria="{{categoria}}"></app-card></a>
+      <a [routerLink]="['/categoria', categoria.name_Category]">
+        <app-card 
+          [nome]="categoria.name_Category"
+          [descricao]="categoria.description_Category || 'Descrição indisponível'"
+          [imagem]="categoria.path_Image_Category || 'assets/no-image.jpg'">
+        </app-card></a>
     </div>
   </div>
   <a routerLink="/pedido"><app-botao corFonte="var(--color-white)" cor="var(--color-red)" valor="FAZER PEDIDO"></app-botao></a>

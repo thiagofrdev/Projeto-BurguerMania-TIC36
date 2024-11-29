@@ -8,5 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  @Input() nome_categoria: string = "Teste";
+  @Input() nome: string = "Teste"; // Propriedade para o nome da categoria
+  @Input() descricao: string = "Descrição padrão"; // Propriedade para a descrição da categoria
+  @Input() imagem: string = ""; // Propriedade para a URL da imagem
 }

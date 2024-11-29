@@ -1,11 +1,77 @@
 {
   "Version": 1,
-  "Hash": "TnqGfdHBDR0vvTBmfYFBHjfMFnlia15JImwBynyreQk=",
+  "Hash": "EpwKCqogwI+JKo9TM3sIKXpzLizLRHJeXLwbY8t1yzg=",
   "Source": "BackendBurguerMania",
   "BasePath": "_content/BackendBurguerMania",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "BackendBurguerMania\\wwwroot",
+      "Source": "BackendBurguerMania",
+      "ContentRoot": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\",
+      "BasePath": "_content/BackendBurguerMania",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Fitness\\X-Fitness.png",
+      "SourceId": "BackendBurguerMania",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\",
+      "BasePath": "_content/BackendBurguerMania",
+      "RelativePath": "assets/imgs/X-Fitness/X-Fitness.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\imgs\\X-Fitness\\X-Fitness.png"
+    },
+    {
+      "Identity": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Infarto\\X-Infarto.png",
+      "SourceId": "BackendBurguerMania",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\",
+      "BasePath": "_content/BackendBurguerMania",
+      "RelativePath": "assets/imgs/X-Infarto/X-Infarto.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\imgs\\X-Infarto\\X-Infarto.png"
+    },
+    {
+      "Identity": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Vegan\\X-Vegan.png",
+      "SourceId": "BackendBurguerMania",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\",
+      "BasePath": "_content/BackendBurguerMania",
+      "RelativePath": "assets/imgs/X-Vegan/X-Vegan.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\imgs\\X-Vegan\\X-Vegan.png"
+    }
+  ]
 }

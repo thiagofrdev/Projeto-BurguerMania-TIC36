@@ -4,7 +4,8 @@
 }
 
 img{
-    width: 12em;
+    width: 10em;
+    height: 10em;
     border-radius: 100%;
 }
 
@@ -29,6 +30,7 @@ img{
 }
 
 .card_nome{
+    margin: 1em;
     font-size: 1.5em;
     font-weight: bold;
     color: var(--color-brown);

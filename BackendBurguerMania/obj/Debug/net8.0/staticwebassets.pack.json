@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Fitness\\X-Fitness.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\X-Fitness\\X-Fitness.png"
+    },
+    {
+      "Id": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Infarto\\X-Infarto.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\X-Infarto\\X-Infarto.png"
+    },
+    {
+      "Id": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Vegan\\X-Vegan.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\X-Vegan\\X-Vegan.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BackendBurguerMania.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BackendBurguerMania.props",
+      "PackagePath": "build\\BackendBurguerMania.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BackendBurguerMania.props",
+      "PackagePath": "buildMultiTargeting\\BackendBurguerMania.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BackendBurguerMania.props",
+      "PackagePath": "buildTransitive\\BackendBurguerMania.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
