@@ -1,8 +1,15 @@
 <div class="categoria">
-  <h1>{{ categoria }}</h1>
+  <h1>{{categoriaNome}}</h1>
   <div class="categorias">
-    <div class="categorias_cards" *ngFor="let hamburguer of hamburgueres">
-        <a routerLink="{{hamburguer}}"><app-card  [nome]="hamburguer" [descricao]="'Descrição padrão'"></app-card></a>
+    <p *ngIf="produtos.length === 0">Nenhuma categoria disponível.</p>
+    <div class="categorias_cards" *ngFor="let produto of produtos">
+        <a routerLink="{{produto}}">
+          <app-card  
+          [nome]="produto.name_Product" 
+          [descricao]="produto.base_Description_Product"
+          [imagem]="produto.path_Image_Product || 'assets/no-image.jpg'">
+          </app-card>
+        </a>
     </div>
   </div>
   <a routerLink="/cardapio"><app-botao corFonte="var(--color-white)" cor="var(--color-red)" valor="VER CARDÁPIO COMPLETO"></app-botao></a>

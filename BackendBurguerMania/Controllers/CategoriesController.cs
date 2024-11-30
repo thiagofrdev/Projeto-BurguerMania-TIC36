@@ -43,6 +43,17 @@ namespace BackendBurguerMania.Controllers
             return Ok(new { Message = $"Categoria {name} encontrada", Category = category });
         }
 
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategoryByID(int id)
+        {
+            var category = await _context.Categories.FirstOrDefaultAsync(c => c.ID_Category == id);
+
+            if (category is null)
+                return BadRequest("Categoria não encontrada");
+
+            return Ok(category.Name_Category);
+        }
+
         [HttpPost]
         public async Task<ActionResult<IEnumerable<Category>>> AddCategory([FromBody] Category category)
         {

@@ -25,4 +25,9 @@ export class CategoriaService {
         )
       );
   }
+
+  //Método para obter o nome da categoria pelo ID
+  getCategoryByName(name: string): Observable<Categoria> {
+    return this.http.get<Categoria>(`${this.apiUrl}/${name}`);
+  }
 }

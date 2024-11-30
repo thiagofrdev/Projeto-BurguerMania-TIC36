@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from "../../components/card/card.component";
 import { BotaoComponent } from "../../components/botao/botao.component";
 import { RouterModule } from '@angular/router';
+import { Product } from '../../interfaces/product/product';
+import { ProdutoService } from '../../services/produto/produto.service';
+import { CategoriaService } from '../../services/categoria/categoria.service';
 
 @Component({
   selector: 'app-categoria',
@@ -13,23 +16,28 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./categoria.component.css']
 })
 export class CategoriaComponent implements OnInit {
-  categoria: string = '';
-  hamburgueres: string[] = [];
+  produtos: Product[] = [];
+  categoriaNome: string = "";
+  error: string | null = null;
 
-  // Dados simulados
-  produtosPorCategoria: { [key: string]: string[] } = {
-    'X-Vegan': ['X-Alface', 'X-Tomate', 'X-Frutas'],
-    'X-Fitness': ['X-Proteína', 'X-Integral', 'X-Avocado'],
-    'X-Infarto': ['X-Bacon', 'X-Costela', 'X-Coração']
-  };
-
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private produtoService: ProdutoService, 
+    private categoriaService: CategoriaService, 
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    // Pega o nome da categoria da URL
-    this.route.params.subscribe(params => {
-      this.categoria = params['categoria'];
-      this.hamburgueres = this.produtosPorCategoria[this.categoria] || [];
+    // Captura o nome da categoria diretamente da URL
+    this.categoriaNome = this.route.snapshot.paramMap.get('categoria') || "";
+
+    // Busca todos os produtos (ou você pode aplicar filtros se necessário)
+    this.produtoService.getAllProducts().subscribe({
+      next: (data) => {
+        this.produtos = data;
+      },
+      error: (err) => {
+        console.error("Erro ao buscar produtos:", err);
+      }
     });
   }
 }
