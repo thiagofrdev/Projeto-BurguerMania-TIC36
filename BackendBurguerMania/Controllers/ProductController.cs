@@ -23,8 +23,9 @@ namespace BackendBurguerMania.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetAllProducts()
         {
-            var products = await _context.Products.ToListAsync();
-            if (products.Count == 0)
+            var products = await _context.Products.Include(p => p.Categories).ToListAsync();
+
+            if (!products.Any())
                 return BadRequest("Nenhum Produto encontrado");
 
             return Ok(new {Message = $"Foram encontrados {products.Count()} produtos.", Products = products});
@@ -40,6 +41,17 @@ namespace BackendBurguerMania.Controllers
             
             return Ok(new { Message = $"{productName} encontrado", Products = product});
         }
+
+        // [HttpGet("{categoryName}")]
+        // public async Task<ActionResult<IEnumerable<Product>>> GetProductsByCategory(string categoryName)
+        // {
+        //      var products = await _context.Products.Include(p => p.Categories).Where(p => p.Categories.Name_Category == categoryName).ToListAsync();
+
+        //      if (!products.Any())
+        //         return NotFound(new { Message = "Nenhum produto encontrado para essa categoria." });
+
+        //     return Ok(products);
+        // }
 
         [HttpPost]
         public async Task<ActionResult<IEnumerable<Product>>> AddProduct(Product product)

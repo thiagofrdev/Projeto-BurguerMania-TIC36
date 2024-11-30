@@ -23,14 +23,20 @@ namespace BackendBurguerMania.Models
         public decimal Price_Product { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(300)]
         public string Base_Description_Product { get; set; }
 
         [Required]
-        [StringLength(1000)]
+        [StringLength(1500)]
         public string Full_Description_Product { get; set; }
 
         [ForeignKey("Categories")]
         public int Category_ID { get; set;}
+
+        [JsonIgnore]
+        public Category Categories { get; set; }
+
+        [JsonPropertyName("CategoryName")]
+        public string CategoryName => Categories?.Name_Category;
     }
 }

@@ -17,6 +17,7 @@ import { CategoriaService } from '../../services/categoria/categoria.service';
 })
 export class CategoriaComponent implements OnInit {
   produtos: Product[] = [];
+  produtosFiltrados: Product[] = []; // Apenas os produtos da categoria
   categoriaNome: string = "";
   error: string | null = null;
 
@@ -30,14 +31,15 @@ export class CategoriaComponent implements OnInit {
     // Captura o nome da categoria diretamente da URL
     this.categoriaNome = this.route.snapshot.paramMap.get('categoria') || "";
 
-    // Busca todos os produtos (ou você pode aplicar filtros se necessário)
-    this.produtoService.getAllProducts().subscribe({
-      next: (data) => {
-        this.produtos = data;
-      },
-      error: (err) => {
-        console.error("Erro ao buscar produtos:", err);
-      }
-    });
+    if (this.categoriaNome) {
+      this.produtoService.getAllProducts().subscribe({
+        next: (data) => {
+          this.produtos = data.products.filter(
+            (produto) => produto.CategoryName === this.categoriaNome
+          );
+        },
+        error: (err) => console.error("Erro ao buscar produtos:", err),
+      });
+    }
   }
 }

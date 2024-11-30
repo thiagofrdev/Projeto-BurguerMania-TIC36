@@ -5,6 +5,30 @@
       "PackagePath": "staticwebassets\\assets\\imgs\\X-Fitness\\X-Fitness.png"
     },
     {
+      "Id": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Fitness\\X-Frango.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\X-Fitness\\X-Frango.png"
+    },
+    {
+      "Id": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Fitness\\X-Salmao.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\X-Fitness\\X-Salmao.png"
+    },
+    {
+      "Id": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Fitness\\X-Turco.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\X-Fitness\\X-Turco.png"
+    },
+    {
+      "Id": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Infarto\\X-BaconDuplo.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\X-Infarto\\X-BaconDuplo.png"
+    },
+    {
+      "Id": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Infarto\\X-CheddarBacon.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\X-Infarto\\X-CheddarBacon.png"
+    },
+    {
+      "Id": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Infarto\\X-EggBacon.png",
+      "PackagePath": "staticwebassets\\assets\\imgs\\X-Infarto\\X-EggBacon.png"
+    },
+    {
       "Id": "C:\\Users\\thiag\\OneDrive\\Documentos\\PROGRAMAÇÃO\\ProjetoBurguerMania_TIC36\\BackendBurguerMania\\wwwroot\\assets\\imgs\\X-Infarto\\X-Infarto.png",
       "PackagePath": "staticwebassets\\assets\\imgs\\X-Infarto\\X-Infarto.png"
     },

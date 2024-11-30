@@ -12,17 +12,11 @@ export class ProdutoService {
 
   constructor(private http: HttpClient) { }
 
-  getAllProducts(): Observable<Product[]>{
-    return this.http
-      .get<{ Message: string; products: Product[]}>(this.apiUrl)
-      .pipe(map((response) => 
-        response.products.map((product) => ({
-          name_Product: product.name_Product,
-          path_Image_Product: product.path_Image_Product,
-          price_Product: product.price_Product,
-          base_Description_Product: product.base_Description_Product,
-          full_Description_Product: product.full_Description_Product,
-        }))
-      ))
+  getProductsByCategoryName(categoriaName: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.apiUrl}${categoriaName}`);
+  }
+
+  getAllProducts(): Observable<{ Message: string; products: Product[] }> {
+    return this.http.get<{ Message: string; products: Product[] }>(this.apiUrl);
   }
 }
