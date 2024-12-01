@@ -42,17 +42,6 @@ namespace BackendBurguerMania.Controllers
             return Ok(new { Message = $"{productName} encontrado", Products = product});
         }
 
-        // [HttpGet("{categoryName}")]
-        // public async Task<ActionResult<IEnumerable<Product>>> GetProductsByCategory(string categoryName)
-        // {
-        //      var products = await _context.Products.Include(p => p.Categories).Where(p => p.Categories.Name_Category == categoryName).ToListAsync();
-
-        //      if (!products.Any())
-        //         return NotFound(new { Message = "Nenhum produto encontrado para essa categoria." });
-
-        //     return Ok(products);
-        // }
-
         [HttpPost]
         public async Task<ActionResult<IEnumerable<Product>>> AddProduct(Product product)
         {
@@ -65,11 +54,23 @@ namespace BackendBurguerMania.Controllers
         }
 
         [HttpPut("{name}")]
-        public async Task<ActionResult<IEnumerable<Product>>> EditProductByName(Product product, string name)
+        public async Task<ActionResult<IEnumerable<Product>>> EditProductByName([FromBody] Product product, string name)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             if (!await ProductExists(name))
                 return BadRequest($"Produto '{name}' não encontrado");
+
+            product.Name_Product = product.Name_Product;
+            product.Path_Image_Product = product.Path_Image_Product;
+            product.Price_Product = product.Price_Product;
+            product.Base_Description_Product = product.Base_Description_Product;
+            product.Full_Description_Product = product.Full_Description_Product;
+            product.Category_ID = product.Category_ID;
             
+            product.Categories = await _context.Categories.FirstOrDefaultAsync(c => c.ID_Category == product.Category_ID);
+
             _context.Products.Update(product);
             await _context.SaveChangesAsync();
             return Ok(new { Message = $"{name} atualizado com sucesso", Product = product });

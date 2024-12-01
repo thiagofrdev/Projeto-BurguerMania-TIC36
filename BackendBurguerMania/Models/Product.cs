@@ -34,9 +34,10 @@ namespace BackendBurguerMania.Models
         public int Category_ID { get; set;}
 
         [JsonIgnore]
-        public Category Categories { get; set; }
+        public Category? Categories { get; set; }
 
+        [NotMapped]
         [JsonPropertyName("CategoryName")]
-        public string CategoryName => Categories?.Name_Category;
+        public string? CategoryName => Categories?.Name_Category;
     }
 }
