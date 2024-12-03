@@ -1,1 +1,59 @@
-<p>administrador works!</p>
+<div class="admin_page">
+    <section class="edit_section">
+        <div class="edit_section_text">
+            <h2>Editar Produtos</h2>
+        </div>
+        <div class="edit_section_choices">
+            <a>
+                <app-card
+                    [nome]="'Adicionar Produto'"
+                    [descricao]="''">
+                    <app-botao></app-botao>
+                </app-card>
+            </a>
+            <a>
+                <app-card
+                    [nome]="'Editar Produto'"
+                    [descricao]="''">
+                    <app-botao></app-botao>
+                </app-card>
+            </a>
+            <a>
+                <app-card
+                    [nome]="'Excluir Produto'"
+                    [descricao]="''">
+                    <app-botao></app-botao>
+                </app-card>
+            </a>
+        </div>  
+    </section>
+
+    <section class="edit_section">
+        <div class="edit_section_text">
+            <h2>Editar Categorias</h2>
+        </div>
+        <div class="edit_section_choices">
+            <a>
+                <app-card
+                    [nome]="'Adicionar Categoria'"
+                    [descricao]="''">
+                    <app-botao></app-botao>
+                </app-card>
+            </a>
+            <a>
+                <app-card
+                    [nome]="'Editar Categoria'"
+                    [descricao]="''">
+                    <app-botao></app-botao>
+                </app-card>
+            </a>
+            <a>
+                <app-card
+                    [nome]="'Excluir Categoria'"
+                    [descricao]="''">
+                    <app-botao></app-botao>
+                </app-card>
+            </a>
+        </div>        
+    </section>    
+</div>
