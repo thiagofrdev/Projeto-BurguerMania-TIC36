@@ -1,16 +1,16 @@
 <div class="produto">
     <h1>Detalhes</h1>
-    <div class="produto_info">
+    <div *ngIf="produto" class="produto_info">
         <div class="produto_img_preco">
-            <img src="../../../assets/imgs/hamburguer.png">
-            <p class="produto_img_preco_nome">{{ hamburguer }}</p>
-            <p>Pão, Habúrguer, alface, tomate, queijo e maionese</p>
-            <p class="produto_img_preco_nome">R$ 35,00</p>
+            <img [src]="produto.path_Image_Product || 'assets/no-image.jpg'" alt="{{ produto.name_Product }}">
+            <p class="produto_img_preco_nome">{{ produto.name_Product }}</p>
+            <p></p>
+            <p class="produto_img_preco_nome">R${{ produto.price_Product }}</p>
         </div>
         <div class="produto_descricao">
             <div class="form_produto_info">
                 <p class="form_produto_info_title">Descrição</p>
-                <p>Um hambúrguer vegano suculento feito com uma base de grão-de-bico e quinoa, temperado com especiarias defumadas, cebola caramelizada e alho, garantindo uma textura rica e saborosa. Servido em um pão macio, ele vem acompanhado de fatias frescas de tomate, alface crocante, picles, abacate cremoso e uma generosa camada de maionese de ervas vegana. Finalizado com molho barbecue agridoce e uma pitada de pimenta-do-reino moída na hora, proporcionando uma combinação deliciosa de sabores e texturas em cada mordida.</p>
+                <p>{{ produto.full_Description_Product }}</p>
             </div>
         </div>
     </div>

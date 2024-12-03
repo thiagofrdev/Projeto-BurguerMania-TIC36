@@ -15,7 +15,7 @@ export const routes: Routes = [
     { path: 'cardapio', component: CardapioComponent },
     { path: 'categoria/:categoria', component: CategoriaComponent },
     { path: 'categoria/:id', component: CategoriaComponent },
-    { path: 'categoria/:categoria/:hamburguer', component: ProdutoComponent },
+    { path: 'categoria/:categoria/:produto', component: ProdutoComponent },
     { path: 'localizacao', component: LocalizacaoComponent },
     { path: 'contato', component: ContatoComponent },
   ];

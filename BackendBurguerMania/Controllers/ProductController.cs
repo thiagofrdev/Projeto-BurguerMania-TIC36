@@ -32,14 +32,14 @@ namespace BackendBurguerMania.Controllers
         }
 
         [HttpGet("{nome}")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProductByName(string productName)
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductByName(string nome)
         {
-            var product = await _context.Products.FirstOrDefaultAsync(p => p.Name_Product == productName);
+            var product = await _context.Products.FirstOrDefaultAsync(p => p.Name_Product == nome);
 
             if (product == null)
-                return BadRequest($"Produto '{productName}' não encontrado");
+                return BadRequest($"Produto '{nome}' não encontrado");
             
-            return Ok(new { Message = $"{productName} encontrado", Products = product});
+            return Ok(new { Message = $"{nome} encontrado", Products = product});
         }
 
         [HttpPost]
