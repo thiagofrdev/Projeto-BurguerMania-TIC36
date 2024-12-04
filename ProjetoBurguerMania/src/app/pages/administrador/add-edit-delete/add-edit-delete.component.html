@@ -1,0 +1,43 @@
+<form [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+  <h1>NOVO PRODUTO</h1>  
+  <div class="form_container">
+    <div class="form-group">
+      <label for="name_Product">Nome do Produto</label>
+      <input type="text" id="name_Product" formControlName="name_Product" class="form-control" placeholder="Nome do Produto"/>
+    </div>
+  
+    <div class="form-group">
+      <label for="path_Image_Product">URL da Imagem</label>
+      <input type="text" id="path_Image_Product" formControlName="path_Image_Product" class="form-control"  placeholder="Escolha a imagem"/>
+    </div>
+  
+    <div class="form-group">
+      <label for="price_Product">Preço</label>
+      <input type="number" id="price_Product" formControlName="price_Product" class="form-control"  placeholder="R$"/>
+    </div>
+  
+    <div class="form-group">
+      <label for="base_Description_Product">Descrição Breve</label>
+      <textarea id="base_Description_Product" formControlName="base_Description_Product" class="form-control"  placeholder="Escreva uma breve descrição"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="full_Description_Product">Descrição Completa</label>
+      <textarea id="full_Description_Product" formControlName="full_Description_Product" class="form-control"  placeholder="Escreva uma descrição longa"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="category_ID">Categoria</label>
+      <select id="category_ID" formControlName="category_ID" class="form-control">
+        <option *ngFor="let category of categories" [value]="category.id">
+          {{ category.name }}
+        </option>
+      </select>
+    </div>
+  
+    <div class="form-actions">
+      <button type="submit" class="botao" (click)="saveProduct()">Salvar</button>
+      <button type="button" class="botao" (click)="onCancel()">Cancelar</button>
+    </div>
+  </div>
+</form>

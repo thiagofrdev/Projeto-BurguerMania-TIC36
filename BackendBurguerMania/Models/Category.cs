@@ -12,7 +12,6 @@ namespace BackendBurguerMania.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [JsonIgnore]
         public int ID_Category { get; set; }
 
         [Required]

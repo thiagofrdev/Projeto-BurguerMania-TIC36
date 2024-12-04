@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+form{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--color-red);
+}
+
+.form_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 80%;
+    width: 40%;
+}
+
+.form-group{
+    width: 90%;
+}
+
+.form-control{
+    padding: 0.2em;
+    height: 1.7em;
+    width: 90%;
+    border-radius: 0.5em;
+    border: 2px solid var(--color-brown);
+    font-size: larger;
+}
