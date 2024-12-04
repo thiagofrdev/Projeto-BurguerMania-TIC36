@@ -12,7 +12,6 @@ namespace BackendBurguerMania.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [JsonIgnore]
         public int ID_UserOrders { get; set; }
 
         [ForeignKey("Users")]

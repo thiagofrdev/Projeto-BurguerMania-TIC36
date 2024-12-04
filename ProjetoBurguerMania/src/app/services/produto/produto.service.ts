@@ -19,4 +19,9 @@ export class ProdutoService {
   getAllProducts(): Observable<{ Message: string; products: Product[] }> {
     return this.http.get<{ Message: string; products: Product[] }>(this.apiUrl);
   }
+
+  // Busca um produto pelo nome
+  getProductByName(name: string): Observable<{ Message: string; products: Product[] }> {
+    return this.http.get<{ Message: string; products: Product[] }>(this.apiUrl);
+  }
 }

@@ -8,7 +8,6 @@ namespace BackendBurguerMania.Models
     {
         [Key] //Define como Chave Primária
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //Define como Auto-increment
-        [JsonIgnore]
         public int ID_Product { get; set; }
 
         [Required] //Define que é NOT NULL
