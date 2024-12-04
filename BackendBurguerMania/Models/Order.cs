@@ -18,5 +18,8 @@ namespace BackendBurguerMania.Models
         [Required]
         [Column(TypeName = "decimal(10, 2)")]
         public decimal Value_Order { get; set; }
+
+        [ForeignKey("Status")]
+        public int Status_ID { get; set; }
     }
 }
