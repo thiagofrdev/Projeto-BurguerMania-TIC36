@@ -27,7 +27,7 @@ input{
 }
 
 mat-form-field {
-    width: 17em;
+    width: 16.5em;
     height: 4em;
 }
 
@@ -61,6 +61,7 @@ mat-form-field {
 .div_data{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .products{

@@ -24,15 +24,46 @@ namespace BackendBurguerMania.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Order>>> GetAllOrders()
+        public async Task<ActionResult> GetAllOrders()
         {
-            var orders = await _context.Orders.ToListAsync();
+            var orders = await _context.Orders
+                .Include(o => o.Status) // Carrega o Status relacionado
+                .Include(o => o.OrdersProducts) // Carrega os produtos relacionados
+                    .ThenInclude(op => op.Product) // Inclui os detalhes dos produtos
+                .Include(o => o.UsersOrders) // Carrega os usuários relacionados
+                    .ThenInclude(uo => uo.User) // Inclui os detalhes do usuário
+                .ToListAsync();
+
             if (!orders.Any())
             {
-                return NotFound("Não foi encontrada nenhuma categoria");
+                return NotFound("Não foi encontrada nenhum pedido");
             }
 
-            return Ok(new { Message = $"{orders.Count} categorias encontradas", Orders = orders });
+            // Projeção dos dados para o retorno
+            var ordersWithDetails = orders.Select(o => new
+            {
+                o.ID_Order,
+                o.Value_Order,
+                Status = new
+                {
+                    o.Status.ID_Status,
+                    o.Status.Name_Status
+                },
+                Products = o.OrdersProducts.Select(op => new
+                {
+                    op.Product_ID,
+                    op.Product.Name_Product, // Assumindo que existe um campo Name_Product no model Product
+                    op.Product.Price_Product
+                }),
+                User = o.UsersOrders.Select(uo => new
+                {
+                    uo.User_ID,
+                    uo.User.Name_User, // Assumindo que existe um campo Name_User no model User
+                    uo.User.Email_User
+                }).FirstOrDefault() // Um pedido normalmente é associado a um único usuário
+            }).ToList();
+
+            return Ok(new { Message = $"{orders.Count} pedidos encontrados", Orders = ordersWithDetails });
         }
 
         [HttpPost]
@@ -41,12 +72,17 @@ namespace BackendBurguerMania.Controllers
             //Validação
             if (orderDto == null || orderDto.Products.Count == 0)
                 return BadRequest("O pedido deve conter pelo menos um produto.");
+            
+            // Garantindo que o pedido comece com o status "Pedido feito"
+            var statusInicial = await _context.Statuses.FirstOrDefaultAsync(s => s.Name_Status == "Pedido feito");
+            if (statusInicial == null)
+                return BadRequest("Status inicial não encontrado no sistema.");
 
             //Criando o pedido
             var order = new Order
             {
                 Value_Order = orderDto.Value_Order,
-                Status_ID = orderDto.Status_ID
+                Status_ID = statusInicial.ID_Status
             };
 
             _context.Orders.Add(order);
@@ -73,7 +109,36 @@ namespace BackendBurguerMania.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Pedido criado com sucesso!", order });
+            return Ok(new
+            {
+                message = "Pedido criado com sucesso!",
+                order = new
+                {
+                    order.ID_Order,
+                    order.Value_Order,
+                    Status = new
+                    {
+                        statusInicial.ID_Status,
+                        statusInicial.Name_Status
+                    }
+                }
+            });
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteOrder(int id)
+        {
+            var order = await _context.Orders.FindAsync(id);
+
+            if (order == null)
+            {
+                return NotFound(new { message = "Status não encontrado." });
+            }
+
+            _context.Orders.Remove(order);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
     }
 }

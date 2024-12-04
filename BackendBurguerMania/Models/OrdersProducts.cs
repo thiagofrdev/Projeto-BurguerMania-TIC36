@@ -16,8 +16,11 @@ namespace BackendBurguerMania.Models
 
         [ForeignKey("Product")]
         public int Product_ID { get; set; }
+        public Product Product { get; set; }
 
         [ForeignKey("Order")]
         public int Order_ID { get; set;}
+        public Order Order { get; set; }
+        
     }
 }

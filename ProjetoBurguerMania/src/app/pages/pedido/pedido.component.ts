@@ -162,7 +162,7 @@ export class PedidoComponent implements OnInit {
     if (this.pedidoForm.valid) {
       const formData = {
         value_Order: this.totalPrice, // Usando o valor total calculado
-        status_ID: 0,   // Se você precisar de um status, defina o valor adequado
+        status_ID: 1,   // Se você precisar de um status, defina o valor adequado
         user_ID: 0,     // Substitua pelo ID correto do usuário, se necessário
         products: this.products.value.map((product: any) => ({
           product_ID: product.productID, // Usando o ID real do produto

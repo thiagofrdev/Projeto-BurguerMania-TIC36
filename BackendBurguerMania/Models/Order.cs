@@ -20,5 +20,9 @@ namespace BackendBurguerMania.Models
 
         [ForeignKey("Status")]
         public int Status_ID { get; set; }
+        public Status Status { get; set; }
+
+        public ICollection<OrdersProducts> OrdersProducts { get; set; }
+        public ICollection<UsersOrders> UsersOrders { get; set; }
     }
 }
