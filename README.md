@@ -1,56 +1,68 @@
 # Projeto Burguer Mania 🍔
 Este é um projeto de um **site responsivo para uma hamburgueria**, desenvolvido como parte da Unidade 9 da **Residência em Software TIC 36**. O objetivo do projeto é oferecer uma experiência intuitiva e agradável para os clientes, com informações sobre o cardápio, localização e formas de contato.
 
-## Imagem 
-![](https://github.com/thiagofrdev/Projeto-BurguerMania-TIC36/blob/main/ProjetoBurguerMania/src/assets/Home_BurguerMania.png)
-
 ## 🚀 Tecnologias Utilizadas
-- **HTML**: Estruturação do site
-- **CSS**: Estilização e responsividade
-- **TypeScript**: Lógica e funcionalidades do site
-- **Angular**: Framework para construção do frontend
+- **Frontend**: HTML, CSS, TypeScript, Angular
+- **Backend**: .NET, Entity Framework
+- **Banco de Dados**: PostgreSQL
 
 ## 📥 Como Rodar o Projeto na Sua Máquina
 
 Siga os passos abaixo para baixar e executar o projeto localmente:
-1. **Clone o repositório no seu computador**:
+
+### 1. Clonar o Repositório
+**Clone o repositório no seu computador**:
   ```
   git clone https://github.com/seu-usuario/nome-do-repositorio.git
   ```
 
-2. **Acesse a pasta do projeto**:
+### 2. Configurar o Backend (.NET):
+1. Certifique-se de ter o .NET SDK instalado na sua máquina.
+2. No diretório do backend:
+- Configure a string de conexão no arquivo appsettings.json para o PostgreSQL:
   ```
-  cd nome-do-repositorio
+  {
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=localhost;Database=BurguerManiaDB;Username=seu_usuario;Password=sua_senha"
+    }
+  }
+  ```
+- Rode os comandos para aplicar as migrações:
+  ```
+  dotnet ef database update
+  ```
+- Inicie o servidor:
+  ```
+  dotnet run
   ```
 
-3. **Instale as dependências necessárias**:
+### 3. Configurar o Frontend (Angular):
+
+1. Certifique-se de ter o Node.js e o Angular CLI instalados.
+2. No diretório do frontend, instale as dependências:
   ```
   npm install
   ```
-
-4. **Inicie o servidor de desenvolvimento**:
+3. Inicie o servidor Angular:
   ```
   ng serve
   ```
+4. Acesse a aplicação no navegador em: http://localhost:4200.
 
-5. **Acesse o projeto no navegador**: Abra o navegador e vá até http://localhost:4200.
+# 🌟 Funcionalidades
+**Para os Clientes:**
+- Fazer Pedido: Adicione itens ao carrinho e finalize a compra.
+- Ver Produtos: Navegue pela lista de produtos disponíveis com detalhes.
+**Para o Administrador:**
+- Adicionar Produtos: Insira novos itens no catálogo de produtos.
+- Atualizar Produtos: Edite informações como nome, preço e descrição.
+- Excluir Produtos: Remova itens do catálogo.
+- Gerenciar Pedidos: Visualize e altere o status de pedidos realizados.
 
-## 🖥️ Explicação das Páginas
-- **Home**: A página inicial apresenta uma visão geral da hamburgueria com informações destacadas sobre promoções, melhores hambúrgueres e a experiência única que o cliente pode esperar.
+# 🔮 Futuras Melhorias
+- Correção de Bugs: Ajustar possíveis problemas de responsividade ou integrações.
+- Implementação de Login: Adicionar autenticação para clientes e administradores.
+- Aprimoramento do Design: Melhorar a interface para oferecer uma experiência mais amigável.
 
-- **Cardápio**: Exibe todas as categorias de hambúrgueres disponíveis, como "X-Vegan", "X-Fitness" e "X-Infarto". É possível navegar para páginas específicas de cada categoria.
-
-- **Categorias**: Cada categoria possui uma página dedicada que lista todos os hambúrgueres pertencentes àquela categoria, como "X-Alface", "X-Tomate", entre outros.
-
-- **Produto**: Página dedicada para exibir os detalhes de um hambúrguer específico, como descrição, ingredientes, preço e imagem.
-
-- **Localização**: Mostra a localização da hamburgueria, com um mapa interativo e instruções para chegar até o local.
-
-- **Contato**: Página com informações para contato, como telefone, e-mail e links para redes sociais, além de um formulário simples para enviar mensagens diretamente para a hamburgueria.
-
-## 📈 Futuras Melhorias
-- Adicionar sistema de pedidos online, permitindo ao cliente montar e personalizar seu hambúrguer.
-- Implementar autenticação e login de usuário para salvar pedidos favoritos.
-- Criar um painel administrativo para o gerenciamento de produtos e categorias.
-- Melhorar a responsividade em dispositivos com resolução muito baixa.
-- Integrar uma API para exibir promoções ou combos dinâmicos.
+#
+Sinta-se à vontade para contribuir com melhorias ou reportar problemas através da aba Issues do repositório! 🚀😊
