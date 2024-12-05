@@ -2,6 +2,20 @@
   <h1>NOVO PRODUTO</h1>  
   <div class="form_container">
     <div class="form-group">
+      <label for="product_Select">Selecione o Produto para Editar</label>
+      <select
+        id="product_Select"
+        (change)="onSelectProduct(selectedProductId)"
+        class="form-control"
+      >
+        <option value="">-- Selecione um Produto --</option>
+        <option *ngFor="let product of products" [value]="product.id">
+          {{ product.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="name_Product">Nome do Produto</label>
       <input type="text" id="name_Product" formControlName="name_Product" class="form-control" placeholder="Nome do Produto"/>
     </div>
@@ -38,6 +52,13 @@
     <div class="form-actions">
       <button type="submit" class="botao" (click)="saveProduct()">Salvar</button>
       <button type="button" class="botao" (click)="onCancel()">Cancelar</button>
+      <button 
+        *ngIf="isEditMode" 
+        type="button" 
+        class="botao" 
+        (click)="updateProduct(addProductForm.value)">
+        Atualizar Produto
+      </button>
     </div>
   </div>
 </form>

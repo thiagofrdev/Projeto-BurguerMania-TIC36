@@ -15,6 +15,9 @@ import { BotaoComponent } from "../../../components/botao/botao.component";
 export class AddEditDeleteComponent implements OnInit {
   addProductForm!: FormGroup;
   categories: any[] = []; // Lista de categorias carregadas da API
+  products: any[] = [];
+  selectedProductId: string = ''; // ID do produto selecionado
+  isEditMode: boolean = false;
   apiUrl = "http://localhost:5106/";
 
   constructor(
@@ -34,6 +37,7 @@ export class AddEditDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCategories();
+    this.loadProducts();
   }
 
   // Carregar categorias da API
@@ -50,6 +54,86 @@ export class AddEditDeleteComponent implements OnInit {
         console.error('Erro ao carregar categorias:', error);
       }
     );
+  }
+
+  // Carregar produtos da API para a caixa de seleção
+  loadProducts(): void {
+    this.http.get<any>(`${this.apiUrl}Products`).subscribe(
+      (data) => {
+        console.log('Produtos carregados:', data);
+        this.products = data.products.map((product: any) => ({
+          id: product.iD_Product,
+          name: product.name_Product,
+        }));
+      },
+      (error) => {
+        console.error('Erro ao carregar produtos:', error);
+      }
+    );
+  }
+
+  loadProduct(productId: number): void {
+    if (!productId) {
+      console.error('ID do produto inválido:', productId);
+      return;
+    }
+  
+    this.http.get<any>(`${this.apiUrl}Product/${productId}`).subscribe(
+      (product) => {
+        if (product) {
+          this.addProductForm.patchValue({
+            name_Product: product.name_Product,
+            path_Image_Product: product.path_Image_Product,
+            price_Product: product.price_Product,
+            base_Description_Product: product.base_Description_Product,
+            full_Description_Product: product.full_Description_Product,
+            category_ID: product.category_ID,
+          });
+        } else {
+          console.warn('Produto não encontrado:', productId);
+        }
+      },
+      (error) => {
+        console.error('Erro ao carregar produto:', error);
+      }
+    );
+  }
+
+  // Atualizar um produto
+  updateProduct(productData: any): void {
+    const productId = productData.select_Product; // Pega o ID do produto selecionado
+    if (!productId) {
+      alert('Selecione um produto para atualizar!');
+      return;
+    }
+  
+    this.http.put(`${this.apiUrl}Product/${productId}`, productData).subscribe(
+      (response) => {
+        console.log('Produto atualizado com sucesso!', response);
+        alert('Produto atualizado com sucesso!');
+        this.router.navigate(['/administrador']); // Volta para a página principal
+      },
+      (error) => {
+        console.error('Erro ao atualizar produto:', error);
+        alert('Erro ao atualizar o produto!');
+      }
+    );
+  }
+
+  onSelectProduct(productId: string): void {
+    console.log(`Produto selecionado: ${productId}`);
+    this.selectedProductId = productId;
+    const id = Number(productId); // Converter ID para número
+    if (id) {
+      this.loadProduct(id); // Carregar os dados do produto
+    } else {
+      console.warn('Nenhum produto selecionado ou ID inválido.');
+      this.addProductForm.reset(); // Reseta o formulário se nada for selecionado
+    }
+  }
+
+  onEditProduct(): void {
+    this.isEditMode = true;
   }
 
   saveProduct(): void {
